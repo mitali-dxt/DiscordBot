@@ -21,6 +21,13 @@ client.on(Events.InteractionCreate, async interaction => {
     if (interaction.commandName === 'ping') {
       await interaction.reply('Pong!');
     }
+    if (interaction.commandName === 'add') {
+      const num1 = interaction.options.get('num1')?.value;
+      const num2 = interaction.options.get('num2')?.value;
+  
+      await interaction.reply(`The sum is: ${num1 + num2}`);
+      
+    }
   });
 
 client.login(process.env.TOKEN);
