@@ -1,5 +1,5 @@
 import 'dotenv/config' 
-import { Client, Events, GatewayIntentBits } from 'discord.js';
+import { Client, Events, GatewayIntentBits, EmbedBuilder, Embed } from 'discord.js';
 
 //client through which we will interact with the Discord server
 const client = new Client({ intents: [
@@ -27,6 +27,12 @@ client.on(Events.InteractionCreate, async interaction => {
   
       await interaction.reply(`The sum is: ${num1 + num2}`);
       
+    }if(interaction.commandName === 'embed'){
+      const embed = new EmbedBuilder();
+      embed.setTitle('This is a title');
+      embed.setDescription('This is a description');
+      embed.setColor('Random');
+      interaction.reply({ embeds: [embed] });
     }
   });
 

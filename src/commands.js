@@ -3,6 +3,10 @@ import { ApplicationCommandOptionType, REST, Routes } from 'discord.js';
 
 const commands = [
   {
+    name: 'embed',
+    description: 'Replies with an embed!',
+  },
+  {
     name: 'ping',
     description: 'Replies with Pong!',
   },
